@@ -1,14 +1,16 @@
 name: CI
+
 on:
   push:
-    branches:
-      - main
-      - develop
-      - feature/**
   pull_request:
 
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
 jobs:
-  java:
+  test:
     runs-on: ubuntu-latest
 
     steps:
