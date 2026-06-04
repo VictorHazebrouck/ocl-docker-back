@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 env:
-  TAG: ${{ github.ref_name }}-${{ github.sha }}
+  TAG: ocl-docker-back:${{ github.ref_name }}-${{ github.sha }}
 
 jobs:
   test:
@@ -76,8 +76,8 @@ jobs:
       - name: Tag backend image
         run: |
           docker tag backend:latest \
-            ghcr.io/${{ github.repository }}:${TAG}
+            ghcr.io/${TAG}
 
       - name: Push backend image
         run: |
-          docker push ghcr.io/${{ github.repository }}:${TAG}
+          docker push ghcr.io/${TAG}
