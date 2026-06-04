@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 env:
-  TAG: ocl-docker-back:${{ github.ref_name }}-${{ github.sha }}
+  TAG: victor-hazebrouck/ocl-docker-back:${{ github.ref_name }}-${{ github.sha }}
 
 jobs:
   test:
