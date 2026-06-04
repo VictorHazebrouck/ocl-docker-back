@@ -8,9 +8,10 @@ permissions:
   contents: read
   checks: write
   pull-requests: write
+  packages: write
 
 env:
-  IMAGE_NAME: victor-hazebrouck/ocl-docker-back
+  IMAGE_NAME: ${{ github.repository }}
   TAG: ${{ github.ref_name }}-${{ github.sha }}
 
 jobs:
