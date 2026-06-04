@@ -42,3 +42,9 @@ jobs:
         with:
           name: java-test-results
           path: test-results/
+
+      - name: Publish JUnit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: test-results/**/*.xml
